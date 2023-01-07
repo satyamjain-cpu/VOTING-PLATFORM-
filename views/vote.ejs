@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title><%= %>Vote | <%= election.name %> | Online Voting Platform</title>
+    <title><%= %>Vote | <%= election.name %> |  Voting Platform</title>
     <meta name="csrf-token" content="<%= csrf %>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,7 +32,7 @@
         <% } else if (!election.launched) { %>
             <div class="flex justify-center">
             <p class="text-2xl text-gray-600">
-                This election has not been launched yet.
+                This election has not been started yet.
             </p>
             </div>
         <% } else { %>
@@ -40,7 +40,7 @@
             <% if (verified) { %>
               <% if (voter.voted) { %>
                   <div class="flex justify-center">
-                      <p class="text-2xl text-gray-600">Thank you for voting.</p>
+                      <p class="text-2xl text-gray-600">Thanks for voting.</p>
                   </div>
               <% } else { %>
                 <%- include ('Ballot.ejs', {election: election, voter: voter}) %>
