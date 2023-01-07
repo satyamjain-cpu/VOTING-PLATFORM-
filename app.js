@@ -57,13 +57,13 @@ passport.use(
           if (result) {
             return done(null, user);
           } else {
-            return done(null, false, { message: "Invalid password" });
+            return done(null, false, { message: "Incorrect password" });
           }
         })
         .catch((error) => {
           console.log(error);
           return done(null, false, {
-            message: "This email is not registered",
+            message: "Email is not regestered",
           });
         });
     }
@@ -88,13 +88,13 @@ passport.use(
           if (result) {
             return done(null, voter);
           } else {
-            return done(null, false, { message: "Invalid password" });
+            return done(null, false, { message: "Incorrect password" });
           }
         })
         .catch((error) => {
           console.log(error);
           return done(null, false, {
-            message: "This voter is not registered",
+            message: "This voter is not regestered",
           });
         });
     }
@@ -171,7 +171,7 @@ app.get(
 
     if (loggedInAdminID !== elections.adminID) {
       return response.render("error", {
-        errorMessage: "You are not authorized to view this page",
+        errorMessage: "You cannot view this page",
       });
     }
 
@@ -202,7 +202,7 @@ app.delete(
     const election = await Election.findByPk(request.params.id);
 
     if (adminID !== election.adminID) {
-      console.log("You are not authorized to perform this operation");
+      console.log("You cannot perform this operation");
       return response.redirect("/home");
     }
 
@@ -246,7 +246,7 @@ app.post(
   connectEnsureLogin.ensureLoggedIn(),
   async (request, response) => {
     if (request.body.name.trim().length === 0) {
-      request.flash("error", "Election name can't be empty");
+      request.flash("error", "Please fill election name");
       return response.redirect("/elections/new");
     }
 
@@ -257,7 +257,7 @@ app.post(
       where: { adminID: loggedInAdminID, name: request.body.name },
     });
     if (election) {
-      request.flash("error", "Election name already used");
+      request.flash("error", "Election name already taken");
       return response.redirect("/elections/new");
     }
 
