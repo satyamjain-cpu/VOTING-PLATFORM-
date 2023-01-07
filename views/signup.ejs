@@ -9,11 +9,11 @@
     <div class="flex justify-center"><%- include ('header') %></div>
     <div class="flex flex-col justify-center items-center p-4">
       <div class="flex flex-col justify-center md:w-1/5 w-full">
-        <h1 class="text-2xl flex justify-center font-semibold">Sign Up</h1>
+        <h1 class="text-2xl flex justify-center font-semibold"><b><u>Sign Up</b></u></h1>
         <form action="/users" method="post" class="flex flex-col gap-4 pt-6">
           <input type="hidden" name="_csrf" value="<%= csrf %>">
           <div class="flex flex-col">
-            <label for="name">Name</label>
+            <label for="name">Enter Name:</label>
             <input
               type="text"
               name="name"
@@ -21,7 +21,7 @@
             />
           </div>
           <div class="flex flex-col">
-            <label for="email">Email</label>
+            <label for="email">Enter Email id:</label>
             <input
               type="text"
               name="email"
@@ -29,7 +29,7 @@
             />
           </div>
           <div class="flex flex-col">
-            <label for="password">Password</label>
+            <label for="password">Enter Password:</label>
             <input
               type="password"
               name="password"
@@ -54,7 +54,7 @@
         </div>
 
         <div class="flex flex-col justify-center pt-4 items-center">
-          <p>Already have an account?</p>
+          <p>Click here if Already have an account?</p>
           <a
             class="bg-gray-100 border-2 px-8 border-black hover:bg-blue-200 p-1 rounded-lg"
             href="/login"
