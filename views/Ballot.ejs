@@ -13,7 +13,7 @@
     </head>
     <body>
         <div>
-            <p class="text-xl">Enter Voter ID: <b><%= voter.voterID %></b></p>
+            <p class="text-xl">Voter ID: <b><%= voter.voterID %></b></p>
         </div>
         <form action="/election/<%= election.id %>/voter/<%= voter.id%>/submit" method="post" class="pt-6">
             <input type="hidden" name="_csrf" value="<%= csrf %>">
