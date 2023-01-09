@@ -1,15 +1,15 @@
 {
   "development": {
     "username": "postgres",
-    "password": "password",
-    "database": "vote_db",
+    "password": "changeme",
+    "database": "wd-ovp-dev",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
-    "password": "password",
-    "database": "vote_db_test",
+    "password": "changeme",
+    "database": "wd-ovp-test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
