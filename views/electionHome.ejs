@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title><%= %>Voting Platform | Satyam Jain</title>
+    <title><%= %>Online Voting Platform | Satyam Jain</title>
     <meta name="csrf-token" content="<%= csrf %>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -207,9 +207,9 @@
         <%- include ('questionList.ejs', {questions: questions, election:
         election}) %>
 
-        <!-- Voter area -->
+        <!-- Voter Section -->
 
-        <!-- Add New Voter if election not end -->
+        <!-- Add New Voter if election not ended -->
         <% if (!election.ended) { %>
           <p class="text-xl">Add Voter</p>
           <form
